@@ -15,19 +15,19 @@
     </div>
     <script>
         function fugirDoClique(event) {
-            setTimeout(() => {
-                let h = window.innerHeight - 50;
-                let w = window.innerWidth - 50;
-                this.style.position = "fixed"; 
-                this.style.top = Math.random() * h + "px";
-                this.style.left = Math.random() * w + "px";
-            }, 100); 
+            let h = window.innerHeight - 50;
+            let w = window.innerWidth - 50;
+            this.style.position = "fixed"; 
+            this.style.top = Math.random() * h + "px";
+            this.style.left = Math.random() * w + "px";
             event.preventDefault();
         }
 
-        document.querySelector("#nao").addEventListener("touchstart", fugirDoClique);
-        document.querySelector("#nao").addEventListener("click", fugirDoClique);
-        document.querySelector("#nao").addEventListener("touchmove", fugirDoClique);
+        let botaoNao = document.querySelector("#nao");
+        botaoNao.addEventListener("touchstart", fugirDoClique);
+        botaoNao.addEventListener("click", fugirDoClique);
+        botaoNao.addEventListener("touchmove", fugirDoClique);
+        botaoNao.addEventListener("mouseover", fugirDoClique); // Faz o botão fugir quando o mouse passa por cima
     </script>
     <style>
         .sim {
