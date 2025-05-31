@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Quer namorar comigo?</h1>
+    </div>
+    <div>
+        <input type="button" value="SIM" id="sim" onclick="window.location.href = 'https://wa.link/9k48cc'" class="sim">
+        <input type="button" value="NÃO" id="nao" class="nao">
+    </div>
+    <script>
+        function fugirDoClique(event) {
+            setTimeout(() => {
+                let h = window.innerHeight - 50;
+                let w = window.innerWidth - 50;
+                this.style.position = "fixed"; // Alterado para fixed para melhor compatibilidade
+                this.style.top = Math.random() * h + "px";
+                this.style.left = Math.random() * w + "px";
+            }, 100); // Pequeno atraso para melhorar desempenho no iOS
+            event.preventDefault(); // Previne comportamentos indesejados no WebView do WhatsApp
+        }
+
+        document.querySelector("#nao").addEventListener("touchstart", fugirDoClique);
+        document.querySelector("#nao").addEventListener("click", fugirDoClique);
+        document.querySelector("#nao").addEventListener("touchmove", fugirDoClique);
+    </script>
+    <style>
+        .sim {
+            background-color: green;
+            color: white;
+            border-radius: 30%;
+            width: 60px;
+            height: 30px;
+        }
+        .nao {
+            background-color: red;
+            color: white;
+            border-radius: 30%;
+            width: 60px;
+            height: 30px;
+        }
+    </style>
+</body>
+</html>
