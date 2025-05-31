@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pedido de Namoro</title>
 </head>
 <body>
     <div>
         <h1>Quer namorar comigo?</h1>
     </div>
     <div>
-        <input type="button" value="SIM" id="sim" onclick="window.location.href = 'https://wa.link/b1czje'" class="sim">
+        <input type="button" value="SIM" id="sim" onclick="window.open('https://wa.link/b1czje', '_blank')" class="sim">
         <input type="button" value="NÃO" id="nao" class="nao">
     </div>
     <script>
@@ -18,11 +18,11 @@
             setTimeout(() => {
                 let h = window.innerHeight - 50;
                 let w = window.innerWidth - 50;
-                this.style.position = "fixed"; // Alterado para fixed para melhor compatibilidade
+                this.style.position = "fixed"; 
                 this.style.top = Math.random() * h + "px";
                 this.style.left = Math.random() * w + "px";
-            }, 100); // Pequeno atraso para melhorar desempenho no iOS
-            event.preventDefault(); // Previne comportamentos indesejados no WebView do WhatsApp
+            }, 100); 
+            event.preventDefault();
         }
 
         document.querySelector("#nao").addEventListener("touchstart", fugirDoClique);
@@ -34,15 +34,19 @@
             background-color: green;
             color: white;
             border-radius: 30%;
-            width: 60px;
-            height: 30px;
+            width: 80px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
         }
         .nao {
             background-color: red;
             color: white;
             border-radius: 30%;
-            width: 60px;
-            height: 30px;
+            width: 80px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </body>
